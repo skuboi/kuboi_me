@@ -1,2 +1,1162 @@
-<!-- <meta http-equiv="refresh" content="0; url=https://repo.github.io/folder/index.html"> -->
- <h1> hello world </h1>
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+  <head><script src="assets/js/color-modes.js"></script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <title>Koto Stan Kuboi · Personal Website</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/album/">
+
+    
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+
+
+<link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- CUSTOM FONTS-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+<!-- LOCAL CSS + JS-->
+<link href="scss/custom.scss" rel="stylesheet">
+<link href="features.css" rel="stylesheet">
+<link href="heroes.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+<script src="Gradient.js" ></script>
+
+
+    <style>
+      * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+          max-width:100vw;
+      }
+
+      body {
+        font-family: "Open Sans";
+        background-color: black;
+        font-weight:300;
+        overflow-x: hidden; /* Prevent horizontal overflow */
+      }
+
+      h4{
+        font-size: large;
+      }
+
+      #xc3-modal {
+        background-color: #000000de !important;
+        --bs-modal-bg: unset;
+      }
+
+      #iLightOCR-modal{
+        background-color: #000000de !important;
+        --bs-modal-bg: unset;
+      } 
+      #exampleModal {
+        background-color: #000000de !important;
+        --bs-modal-bg: unset;
+      }
+
+      .modal-title{
+        font-family: 'DM Serif Display';
+      }
+  
+
+      .prd-content {
+            max-height: 75vh;
+            overflow-y: auto;
+            padding: 15px;
+        }
+
+      .bold_font{
+        font-weight:700;
+      }
+
+      .thin_font{
+        font-weight:300;
+      }
+
+      .no-bg-plz{
+        background-color: none!important;
+        background:none!important;
+      }
+      
+      .mt-3{
+        margin-top:0.2rem!important;
+      }
+
+      .me-3{
+        margin-top:0!important;
+      }
+
+      .navbar-dark{
+        background-color: black !important;
+      }
+
+      .bg-dark{
+        background-color: black;
+      }
+      
+      .navbar-header-text-koto {
+        font-family: "DM Serif Display";
+        color: white;
+        font-weight:normal;
+      }
+
+      /* Alt */
+      #gradient-canvas {
+            --gradient-color-1: #000000b5;
+            --gradient-color-2: #0c0f4abf;
+            --gradient-color-3: #055041c4;
+            --gradient-color-4: #961836d6;
+      } 
+
+      /* Alt 
+      #gradient-canvas {
+            --gradient-color-1: #000000b5;
+            --gradient-color-2: #1d227ebf;
+            --gradient-color-3: #0d7b65c4;
+            --gradient-color-4: #ce2f54d6;
+      } */
+
+      /* original color scheme
+      #gradient-canvas {
+            --gradient-color-1: #6ec3f4;
+            --gradient-color-2: #3a3aff;
+            --gradient-color-3: #ff61ab;
+            --gradient-color-4: #E63946;
+        }
+    
+
+      /* Dark Canvas 
+      #gradient-canvas {
+            --gradient-color-4: #0a473b;
+            --gradient-color-3: #066653;
+            --gradient-color-1: #143656;
+            --gradient-color-2: #0e476d;
+        }  */
+
+        /* Green Blue Canvas 
+      #gradient-canvas {
+            --gradient-color-1: #000000;
+            --gradient-color-3: #39665e;
+            --gradient-color-4: #3C8CE7;
+            --gradient-color-2: #000000;
+
+        }*/
+
+      
+      canvas {
+        width: 100%;
+        height: auto;
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: -9999;
+        background:rgba(0, 0, 0, 0.8);
+      }
+
+
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      
+
+      .b-example-divider {
+        width: 100%;
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .btn-bd-primary {
+        --bd-violet-bg: #712cf9;
+        --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+
+        --bs-btn-font-weight: 600;
+        --bs-btn-color: var(--bs-white);
+        --bs-btn-bg: var(--bd-violet-bg);
+        --bs-btn-border-color: var(--bd-violet-bg);
+        --bs-btn-hover-color: var(--bs-white);
+        --bs-btn-hover-bg: #6528e0;
+        --bs-btn-hover-border-color: #6528e0;
+        --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+        --bs-btn-active-color: var(--bs-btn-hover-color);
+        --bs-btn-active-bg: #5a23c8;
+        --bs-btn-active-border-color: #5a23c8;
+      }
+
+      .bd-mode-toggle {
+        z-index: 1500;
+      }
+
+      .bd-mode-toggle .dropdown-menu .active .bi {
+        display: block !important;
+      }
+/* TIMELINE CSS*/
+/* */ /* */ /* */
+
+.timeline-steps {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap
+}
+
+.timeline-steps .timeline-step {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin: 1rem
+}
+
+@media (min-width:768px) {
+    .timeline-steps .timeline-step:not(:last-child):after {
+        content: "";
+        display: block;
+        border-top: .25rem dotted #4f8698;
+        width: 3.46rem;
+        position: absolute;
+        left: 7.5rem;
+        top: .3125rem;
+    }
+    .timeline-steps .timeline-step:not(:first-child):before {
+        content: "";
+        display: block;
+        border-top: .25rem dotted #4f8698;
+        width: 3.8125rem;
+        position: absolute;
+        right: 7.5rem;
+        top: .3125rem
+    }
+}
+
+.timeline-steps .timeline-content {
+    width: 10rem;
+    text-align: center
+}
+
+.timeline-steps .timeline-content .inner-circle {
+    border-radius: 1.5rem;
+    height: 1rem;
+    width: 1rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #4f8698;
+    opacity: .9;
+}
+
+.timeline-steps .timeline-content .inner-circle:before {
+    content: "";
+    background-color: #2b7eb5;
+    display: inline-block;
+    height: 3rem;
+    width: 3rem;
+    min-width: 3rem;
+    border-radius: 6.25rem;
+    opacity: .7
+}
+
+/* iFRAME PDF EMBED CSS */
+.iframe-container {
+    position: relative;
+    width: 95%; /* Centering */
+    height: 0;
+    padding-bottom: 56.25%; /* Aspect ratio 16:9, adjust as needed */
+    overflow: hidden;
+    transition: opacity 0.3s;
+    margin: auto;
+}
+
+.iframe-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: auto;
+    transition: opacity 0.3s;
+    opacity: 0.5; /* Adjust the initial opacity */
+}
+
+.iframe-container:hover iframe {
+    opacity: 1; /* Remove opacity on hover */
+}
+
+.modal-body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0; /* Remove padding for full-width iframe */
+    height: 100%; /* Make sure the modal body takes full height */
+}
+
+/* ACCORDION FOR RESUME / META EXPERIENCE CSS */
+/*       */
+
+.accordion{
+  --bs-accordion-active-color: white;
+  --bs-blue:white;
+  margin-top: 1rem;
+  padding-bottom:1rem;
+}
+
+.accordion-body{
+  background-color: black;
+}
+.accordion-header{
+  font-family:DM Serif Display
+}
+
+.accordion-button:not(.collapsed){
+  color: white;
+  background-color:#212529;
+  opacity: 0.8;
+}
+
+/* Use if debugging CSS overflow
+body {
+    outline: 1px solid blue;
+}
+
+div, section, header, footer, article, nav, main, aside, canvas, iframe {
+    outline: 1px solid red; 
+}
+
+img, svg {
+    outline: 1px solid green;
+} 
+*/
+
+    </style>
+
+    
+  </head>
+  <body>
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+      <symbol id="check2" viewBox="0 0 16 16">
+        <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+      </symbol>
+      <symbol id="circle-half" viewBox="0 0 16 16">
+        <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
+      </symbol>
+      <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+        <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+        <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
+      </symbol>
+      <symbol id="sun-fill" viewBox="0 0 16 16">
+        <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+      </symbol>
+    </svg>
+
+    <!-- header drop down
+    <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
+      <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center"
+              id="bd-theme"
+              type="button"
+              aria-expanded="false"
+              data-bs-toggle="dropdown"
+              aria-label="Toggle theme (auto)">
+        <svg class="bi my-1 theme-icon-active" width="1em" height="1em"><use href="#circle-half"></use></svg>
+        <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+            <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#sun-fill"></use></svg>
+            Light
+            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+            <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#moon-stars-fill"></use></svg>
+            Dark
+            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
+            <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#circle-half"></use></svg>
+            Auto
+            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+          </button>
+        </li>
+      </ul>
+    </div>
+
+    <header data-bs-theme="dark">
+      <div class="collapse text-bg-dark" id="navbarHeader">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-8 col-md-7 py-4">
+              <h4>About</h4>
+              <p class="text-body-secondary">Add some information about the album below, the author, or any other background context. Make it a few sentences long so folks can pick up some informative tidbits. Then, link them off to some social networking sites or contact information.</p>
+            </div>
+            <div class="col-sm-4 offset-md-1 py-4">
+              <h4>Contact</h4>
+              <ul class="list-unstyled">
+                <li><a href="#" class="text-white">Follow on Twitter</a></li>
+                <li><a href="#" class="text-white">Like on Facebook</a></li>
+                <li><a href="#" class="text-white">Email me</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="navbar navbar-dark bg-dark shadow-sm">
+        <div class="container">
+          <a href="#" class="navbar-brand d-flex align-items-center">
+            <strong class="navbar-header-text-koto">Koto Stan Kuboi</strong>
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+      </div>
+
+    </header>
+    -->
+
+<main>
+
+  
+
+
+ <!-- intro section = background gradient canvas + hero + CTAs-->
+  <section class="py-3 text-center container">
+    <canvas id="gradient-canvas" style="width:100vw;height:100vh"></canvas>
+        <script>
+            var gradient = new Gradient()
+            gradient.initGradient('#gradient-canvas');
+        </script>
+    <div class="row">
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <h1 class="fw-light"  style="font-family:DM Serif Display">Hi, I'm Koto!</h1>
+        <p class="lead text-body-secondary">I'm a soon-to-be Harvard MBA graduate with a love for tech, AI, and gaming.</p>
+                 <p class="lead text-body-secondary" style="font-size:1.0rem">Email me at kkuboi@mba2024.hbs.edu</p>
+      </div>
+    </div>
+  </section>
+
+  
+
+
+
+  <!-- timeline and experiences-->
+<section class = "container thin_font" style="background-color:black; max-width:100vw; padding-top: 40px; padding-bottom: 40px; font-weight:300" > 
+  <div class="row text-center justify-content-center mb-2" >
+    <div class="col-xl-6 col-lg-8">
+        <h2 style="font-family:DM Serif Display">Experience</h2>
+        <a href="https://linkedin.com/in/kuboi" class="btn btn-outline-light" style="font-weight: 300; margin-left:15px; margin-right:15px; margin-top:5px; margin-bottom:0">LinkedIn</a>
+        <a href="resume.pdf" class="btn btn-outline-light" target="_blank" style = "font-weight: 300; margin-left:15px; margin-right:15px; margin-top:5px; margin-bottom:0">Resume</a>
+    </div>
+  </div>
+
+  <div class="d-flex flex-column flex-md-row p-4 gap-4 py-md-3 align-items-center justify-content-center">
+    <div class="list-group">
+      <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+        <img src="index_files/harv.png" alt="twbs" width="50" height="50" class="rounded-circle flex-shrink-0">
+        <div class="d-flex gap-2 w-100 justify-content-between">
+          <div>
+            <h6 class="mb-1" style="font-family:DM Serif Display">MBA @ Harvard</h6>
+            <p class="mb-0 opacity-75" style="font-size:0.9rem">I strengthend my business fundamentals and participated in over 500 case discussions at Harvard Business School’s MBA program, with a focus on technology and strategy classes.</p>
+          </div>
+          <small class="opacity-50 text-nowrap">2022-2024</small>
+        </div>
+      </a>
+
+      <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+        <img src="index_files/T4.png" alt="twbs" width="50" height="50" class="rounded-circle flex-shrink-0">
+        <div class="d-flex gap-2 w-100 justify-content-between">
+          <div>
+            <h6 class="mb-1" style="font-family:DM Serif Display">Founder @ Takara</h6>
+            <p class="mb-0 opacity-75" style="font-size:0.9rem">I founded my own startup called Takara during my MBA with a vision to help small businesses in Japan leapfrog in their digital transformation via AI and automation.</p>
+          </div>
+          <small class="opacity-50 text-nowrap">2023</small>
+        </div>
+      </a>
+
+      <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+        <img src="index_files/meta.webp" alt="twbs" width="50" height="50" class="rounded-circle flex-shrink-0">
+        <div class="d-flex gap-2 w-100 justify-content-between">
+          <div>
+            <h6 class="mb-1" style="font-family:DM Serif Display">Strategy & Planning @ Meta</h6>
+            <p class="mb-0 opacity-75" style="font-size:0.9rem">I helped start and scale a new team focused on driving portfolio strategy and resource planning for Meta's global brand, product, and growth marketing teams. </p>
+          </div>
+          <small class="opacity-50 text-nowrap">2021-2022</small>
+        </div>
+      </a>
+
+      <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+        <img src="index_files/fb.jpeg" alt="twbs" width="50" height="50" class="rounded-circle flex-shrink-0">
+        <div class="d-flex gap-2 w-100 justify-content-between">
+          <div>
+            <h6 class="mb-1" style="font-family:DM Serif Display">Product Marketing @ Meta </h6>
+            <p class="opacity-75" style="font-size:0.9rem">I built and grew Facebook Marketplace's new ecommerce and housing product verticals, during my new-grad PMM rotational program. </p>
+          </div>
+          <small class="opacity-50 text-nowrap">2018-2021</small>
+        </div>
+      </a>
+
+      <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+        <img src="index_files/bruins.png" alt="twbs" width="50" height="50" class="rounded-circle flex-shrink-0">
+        <div class="d-flex gap-2 w-100 justify-content-between">
+          <div>
+            <h6 class="mb-1" style="font-family:DM Serif Display">Life Sciences @ UCLA</h6>
+            <p class="opacity-75" style="font-size:0.9rem">I graduated Magna Cum Laude with B.S. in Psychobiology at UCLA, with extracurriculars in public health policy, mental health advocacy, and advertising.</p>
+          </div>
+          <small class="opacity-50 text-nowrap">2014-2018</small>
+        </div>
+      </a>
+      
+    </div>
+  </div>
+
+  
+
+  </div>
+  </section>
+
+<!-- Skills -->
+<section class="container">
+  <div class="container px-4 py-4" id="hanging-icons"> 
+    <h2 class="pb-2 border-bottom" style="font-family:DM Serif Display; font-size:2.5rem">Skills</h2>
+    <p style="font-size:1.25rem">I see myself as a bridge. I can help serve as a bridge across...</p>
+    <div class="row g-4 py-4 row-cols-1 row-cols-lg-2">
+      <div class="col d-flex align-items-start">
+        <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3 no-bg-plz">
+          <i class="bi-cloud-sun-fill" style="font-size:1.5em;"></i>
+        </div>
+        <div>
+          <h3 class="fs-5 text-body-emphasis"  style="font-family:DM Serif Display; padding-top:0px; margin-top:0px">Strategy and Execution</h3>
+          <p style="font-size:0.8rem">I can think big as a strategist, but also love to dive into the details and get things done. I am thoughtful and diligent about turning goals, ideas, and strategies into reality.</p>
+        </div>
+      </div>
+      <div class="col d-flex align-items-start">
+        <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3 no-bg-plz">
+          <i class="bi-rocket-takeoff-fill" style="font-size:1.5em;"></i>
+        </div>
+        <div>
+          <h3 class="fs-5 text-body-emphasis"  style="font-family:DM Serif Display; padding-top:0px; margin-top:0px">Full Product Lifecycle</h3>
+          <p style="font-size:0.8rem">I am comfortable with the entire lifecycle of product development, from ideation through customer interviews, hypothesis validation, launch, iteration, monetization, and scale. </p>
+        </div>
+      </div>
+   
+    
+    <div class="col d-flex align-items-start">
+      <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3 no-bg-plz">
+        <i class="bi-palette-fill" style="font-size:1.5em;"></i>
+      </div>
+      <div>
+        <h3 class="fs-5 text-body-emphasis"  style="font-family:DM Serif Display; padding-top:0px; margin-top:0px">Cross-Functional Teams</h3>
+        <p style="font-size:0.8rem"> I adapt based on the audience, whether it's persuading an engineer to prioritize a feature or providing creative feedback to an ad agency. My roles at Meta let me work with nearly every function within tech.</p>
+      </div>
+    </div>
+
+    <div class="col d-flex align-items-start">
+      <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3 no-bg-plz">
+        <i class="bi-arrow-down-up" style="font-size:1.5em;"></i>
+      </div>
+      <div>
+        <h3 class="fs-5 text-body-emphasis"  style="font-family:DM Serif Display; padding-top:0px; margin-top:0px">Levels of Seniority</h3>
+        <p style="font-size:0.8rem">I excel in being a force multiplier for senior leaders while building strong relationships with on-the-ground teams to ensure successful execution.</p>
+      </div>
+  </div>
+
+      
+    <!--
+    <div class="col d-flex align-items-start">
+        <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3 no-bg-plz">
+          <i class="bi-clipboard-data-fill" style="font-size:1.5em;"></i>
+        </div>
+        <div>
+          <h3 class="fs-5 text-body-emphasis"  style="font-family:DM Serif Display; padding-top:0px; margin-top:0px">Early Stage and Scale</h3>
+          <p style="font-size:0.8rem">Having founded my own startup and led global programs at Meta, I understand the spectrum of resources and scale. This experience equips me to navigate both the fast-paced demands of early-stage startups and the complex challenges of scaling operations.</p>
+        </div>
+    </div>
+    <div class="col d-flex align-items-start">
+      <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3 no-bg-plz">
+        <i class="bi-patch-question-fill" style="font-size:1.5em;"></i>
+      </div>
+      <div>
+        <h3 class="fs-5 text-body-emphasis"  style="font-family:DM Serif Display; padding-top:0px; margin-top:0px">Periods of Ambiguity</h3>
+        <p style="font-size:0.8rem"> I see ambiguity and change as opportunities for learning– I am comfortable in uncertain environments, where I can explore new possibilities and take a leadership role. For example, during the early days of COVID-19, I led Facebook App Marketing’s strategic replan.</p>
+      </div>
+    -->
+    </div>
+    
+    </div>
+
+
+  </section>
+
+
+
+
+
+<!-- Button trigger modal example-->
+<!-- 
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Launch demo modal
+</button>
+-->
+
+
+<!-- Project Modals -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-fullscreen">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQgiqy97edfhXJ_RQG0IndpGqTcX68r3y-WWpe1E9Dsmvbxwvf971ZpUCn66wToUROHZhni-9p_5BSv/embed?start=false&loop=false&delayms=3000" frameborder="0" width="100%" height="50%"  allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="iLightOCR-modal" tabindex="-1" aria-labelledby="iLightOCR-modal-label" aria-hidden="true">
+  <div class="modal-dialog modal-fullscreen">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">iLightOCR Project Overview</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="button-group" style="margin:15px">
+              <a href="https://github.com/skuboi/iLightOCR_2024/blob/main/app.py" class="btn btn-outline-light" style="font-weight:300" target="_blank">View GitHub Repo</a>
+             <!-- <a href="/path/to/your/pdf/iLightOCR_PRD-2.pdf" class="btn btn-outline-light" style="font-weight:300"  download>View PRD PDF</a> -->
+          </div>
+          <div class="modal-body">
+              <!-- Placeholder for video demo -->
+              <div class="embed-responsive col-4 d-flex align-items-center justify-content-center">
+                <video controls class = ""  style=" height:60vh!important; width:auto; max-width:25vw!important">
+                  <source src="index_files/demo480.mov" type="video/mp4">
+                </video>
+              </div>
+
+              <!-- PRD Content Start -->
+              <div class="prd-content" style="font-size:small">
+                  <h4>TL;DR</h4>
+                  <p> iLightOCR is an AI-powered productivity tool designed to help readers save and summarize article snippets while on the go. Users can easily highlight text, screenshot it, and let iLightOCR transform these into concise summaries saved in a personalized Notion database.</p>
+                  
+                  <h4>Problem Statement</h4>
+                  <p>People often lose valuable insights and quotes when reading articles on their phones due to the lack of an efficient tool to save and summarize specific text snippets. Current solutions are cumbersome and mainly focus on saving entire articles or are limited to browser extensions, leaving mobile users frustrated and inefficient in their reading habits.</p>
+
+                  <h4>Solution Overview</h2>
+                  <p>iLightOCR provides a comprehensive solution by allowing users to highlight text, take screenshots of articles, and process these images to extract and summarize the content. The summarized text is then saved directly to the user's Notion database, ensuring easy retrieval and organization.</p>
+                  
+                  <h4>Core Features</h2>
+                  <ul>
+                    <li><strong>Highlight and save snippets:</strong> Users can highlight text and take screenshots of articles directly from their mobile devices.                    </li>
+                    <li><strong>Text extraction:</strong> Automatically convert highlighted and screenshotted text into a digital format.  </li>
+                    <li><strong>Content summarization:</strong> Identify the key points from the extracted text.                    </li>
+                    <li><strong>Notion Integration:</strong> The summarized content is saved directly to a user's Notion database for easy retrieval and organization. </li>
+
+                  </ul>
+
+                  <h4>Key Benefits</h2>
+                  <ul>
+                      <li>Easy and efficient experience: Streamlines the process of capturing and summarizing important text snippets from mobile devices. </li>
+                      <li>Integrated: Integrates seamlessly into daily workflows, making information retrieval easy and intuitive. </li>
+                  </ul>
+
+                  <h4> Demo Tech Stack </h4>
+                  <ul>
+                    <li> Computer Vision: OpenCV </li>
+                    <li> OCR: Azure, Tesseract </li>
+                    <li> AI: ChatGPT </li>
+                    <li> Databases: AWS, Notion </li>
+                    <li> UI: Streamlit </li>
+                  </ul>
+
+                  <h4> Demo Caveats </h4>
+                  <ul>
+                    <li> Performance varies for non-white or non-black article backgrounds</li>
+                    <li> No options to toggle between different OCR and LLM providers</li>
+                    <li> Clunky uploading process; want to build share-sheet functionality </li>
+                    <li> Other project opportunities: Text classifier to better categorize and tag articles; scrape full article text based on snippets, not just the URL; </li>
+                   
+                  </ul>
+
+                  <h4> What I learned </h4>
+                  <ul>
+                    <li> How to wrangle different file and image formats across Streamlit, OpenCV, Scikit-Image, and more. </li>
+                    <li> How to run optical character recognition and leverage image manipulation libraries improve text extraction performance. </li>
+                    <li> How to clean and structure data so that disparate APIs can work together seamlessly. </li>
+                    <li> How to integrate multiple APIs and services into a single project, including Azure OCR, Tesseract, and Notion. </li>
+                    <li> How to leverage OpenAI's APIs to accomplish different subtasks within a single project. </li>
+                    <li> How to fast-track UI and event handling with Streamlit. </li>
+                  </ul>
+                   
+
+              </div>
+              <!-- PRD Content End -->
+          </div>
+          
+      </div>
+  </div>
+</div>
+
+<div class="modal fade" id="xc3-modal" tabindex="-1" aria-labelledby="xc3-modal-label" aria-hidden="true">
+  <div class="modal-dialog modal-fullscreen">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">RIKU Project Overview</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="button-group" style="margin:15px">
+              <a href="https://github.com/skuboi/riku/blob/main/riku.py" class="btn btn-outline-light" style="font-weight:300" target="_blank">View GitHub Repo</a>
+             <!-- <a href="/path/to/your/pdf/iLightOCR_PRD-2.pdf" class="btn btn-outline-light" style="font-weight:300"  download>View PRD PDF</a> -->
+          </div>
+          <div class="modal-body">
+              <!-- Placeholder for video demo -->
+              <div class="embed-responsive col-4 d-flex align-items-center justify-content-center">
+                  <video controls class = "" style="height:60vh!important; width:auto; max-width:25vw!important">
+                    <source src="index_files/riku_demo.mov" type="video/mp4">
+                  </video>
+                  <!-- <iframe class="embed-responsive-item" src="video.mov" id="video-demo" allowfullscreen style="aspect-ratio:9/16; height:60vh!important; width:auto; max-width:25vw!important"></iframe> -->
+              </div>
+
+              <!-- PRD Content Start -->
+              <div class="prd-content" style="font-size:small">
+                  <h4>TL;DR</h4>
+                  <p> RIKU is an AI chatbot that gives gamers convenient access to helpful information, statistics, maps, and guides about their favorite video games. Users can select a video game franchise, then ask questions to retrieve specific information, allowing gamers to find answers to their in-game queries efficiently.                  </p>
+                  
+                  <h4>Problem Statement</h4>
+                  <p>Gamers often struggle to find specific information in the vast sea of internet resources while playing. Switching between the game and various online resources such as blogs, wikis, and guides disrupts the gaming experience and is time-consuming. This issue is particularly pronounced in complex game genres like RPGs and MMOs, where players need detailed information to optimize their gameplay strategies.</p>
+
+                  <h4>Solution Overview</h2>
+                  <p>RIKU addresses this problem by providing a centralized AI-powered chatbot that pulls information from wikis and other reliable sources. It offers precise and quick answers to user queries (e.g., “where can I find item X?, what’s the hidden ability for class Y?”), thereby enhancing the gaming experience with reliable information at gamers' fingertips.</p>
+                  
+                  <h4>Core Features</h2>
+                  <ul>
+                    <li><strong>Accept user questions:</strong> Allow users to input questions about specific game details (e.g., what a certain debuff does in Xenoblade).                      </li>
+                    <li><strong>Collect game data for key titles:</strong> Collect and store information from pre-selected resources (e.g., Fandom wikis) for various games.                    </li>
+                    <li><strong>RAG-capable AI:</strong> Integrate ChatGPT so that RIKU can answer user queries dynamically, then fine-tune the model on this specific dataset (e.g., question-and-answer format based on parsed Fandom wiki data).                    </li>
+                  </ul>
+
+                  <h4>Key Benefits</h2>
+                  <ul>
+                      <li>Easy and efficient experience: Streamlines the process of finding specific game information, reducing the time gamers spend searching through multiple sources.                      </li>
+                      <li>Comprehensive and centralized information: Aggregates and synthesizes information from multiple sources or pages, providing a centralized platform for game-related queries.</li>
+                  </ul>
+
+                  <h4> Product Flow </h4>
+                  <ul>
+                    <li>  <strong> RIKU scrapes and collects game data:</strong> Scrape, parse, and organize information for select titles in a way that’s accessible for the AI. </li>
+                    <li>   <strong>User asks a question about a supported title: </strong>The user inputs a specific question about game details (e.g., "when does Metang evolve in Pokemon Ruby?”). </li>
+                    <li>   <strong>RIKU generates an answer:</strong>The AI model processes the user's question, matching it with the parsed data from the wiki to find the most relevant information via RAG.</li>
+                    <li>   <strong>User continues the conversation or continues on with their gameplay: </strong>Follow-up questions and more detailed responses available if needed.</li>
+                  </ul>
+
+                  <h4> Demo Tech Stack </h4>
+                  <ul>
+                    <li> AI: ChatGPT </li>
+                    <li> RAG and Vector Store: LangChain </li>
+                    <li> UI: Streamlit </li>
+                    <li> Web Scraping: Wikiextractor Package </li>
+                  </ul>
+
+                  <h4> Demo Caveats </h4>
+                  <ul>
+                    <li> Limited to Xenoblade Chornicles 3 Fandom wiki data </li>
+                    <li> Limited to queries on classes, skills, arts, builds, and gems </li>
+                    <li> Locally hosted vector store with out-of-the-box embeddings </li>
+                    <li> Next steps: larger breadth of games and questions, voice-chat </li>
+                  </ul>
+
+                  <h4> What I learned </h4>
+                  <ul>
+                    <li> How to organize, chunk, and store data for efficient AI training and inference. </li>
+                    <li> how to leverage embeddings and vector stores to improve AI chatbot performance via RAG. </li>
+                    <li> How to scrape public web data. </li>
+                    <li> How to clean and strcuture web data for AI training and model fine-tuning. </li>
+                  </ul>
+                   
+
+              </div>
+              <!-- PRD Content End -->
+          </div>
+          
+      </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="takara_finance" tabindex="-1" aria-labelledby="takara_financeLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Takara's Finance & GTM Approach</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQgiqy97edfhXJ_RQG0IndpGqTcX68r3y-WWpe1E9Dsmvbxwvf971ZpUCn66wToUROHZhni-9p_5BSv/embed?start=false&loop=false&delayms=3000" width = "700"  height = "400" frameborder="0" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="takara_tech" tabindex="-1" aria-labelledby="takara_techLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-scrollable ">
+    <div class="modal-content" style="height:82vh">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel" style="font-family: DM Serif Display">Takara's tech strategy and research findings</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="container-fluid">
+          <div class="row">
+            <h5 style="font-family: DM Serif Display"> Summary </h5>
+            <p> Below is a sampling of XYZ. </p>
+          </div>
+          <div class="row"> 
+            <div class="iframe-container">
+              <iframe src="" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Section: Cards -->
+
+  <section class="container px-4 py-5" id="custom-cards" style="background-color:black; max-width:100vw; padding-top: 40px; padding-bottom: 40px">
+
+    <div class="row text-center justify-content-center mb-5" style="margin-bottom:0px!important">
+      <div class="col-xl-6 col-lg-8">
+          <h2 style="font-family:DM Serif Display">Sample Technical Projects</h2>
+      </div>
+    </div>
+
+    <div class="row row-cols-1 row-cols-lg-2 align-items-stretch g-4 py-5" style="padding-bottom:0px !important">
+      <!-- <div class="col">
+        <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('gallery.png'); background-size:cover"> 
+          <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+            <h3 class="mt-5 mb-4 display-6 lh-1 fw-bold">Takara Snap: MVP Building Blocks</h3>
+            <ul class="d-flex list-unstyled mt-auto">
+       
+              <li class="d-flex align-items-left"> 
+            
+                <small>Sampling of early prototypes, tests, and models for Takara Snap's MVP.</small>
+              </li>
+             
+            </ul>
+          </div>
+          modal link here 
+          <a href="http://apple.com" class="stretched-link" data-bs-toggle="modal" data-bs-target="#exampleModal"></a>
+
+        </div>
+      </div>
+    -->
+      <div class="col">
+        <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('index_files/blue-library.png'); background-size:cover"> <!-- background-size:cover-->
+          <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+            <h2 class="mt-2 mb-4 lh-1 fw-bold">iLightOCR</h3>
+            <ul class="d-flex list-unstyled mt-auto">
+              <li class="d-flex align-items-left"> 
+                <small> AI-powered productivity tool to help readers save and summarize article screenshots while on the go</small>
+              </li>
+            </ul>
+          </div>
+          <!-- modal link here -->
+          <a href="http://apple.com" class="stretched-link" data-bs-toggle="modal" data-bs-target="#iLightOCR-modal"></a>
+
+        </div>
+      </div>
+      <div class="col">
+        <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('index_files/control.png'); background-size:cover"> <!-- background-size:cover-->
+          <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+            <h2 class="mt-2 mb-4 lh-1 fw-bold">RIKU: Gaming Assistant AI Chatbot</h5>
+            <ul class="d-flex list-unstyled mt-auto">
+              <li class="d-flex align-items-left"> 
+                <small>RAG-capable bot to help with RPG inventory, weapon, and build management.</small>
+              </li>
+            </ul>
+          </div>
+          <!-- modal link here -->
+          <a href="http://apple.com" class="stretched-link" data-bs-toggle="modal" data-bs-target="#xc3-modal"></a>
+
+        </div>
+      </div>
+
+     
+    </div>
+  </section>
+
+  <!-- Takara Deep Dive -->
+  <section class="container" style="max-width: 1200px; padding-left:1.1rem; padding-right:1.1rem";>
+    <div class="row flex-lg-row-reverse align-items-center g-5 py-5" style="padding-bottom:3px!important;">
+      <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3" style="font-family:DM Serif Display">Takara: Overview</h1>
+      <div class="col-md-6">
+        <img src="index_files/takara5.png" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width=90% loading="lazy">
+      </div>
+      <div class="col-md-6" style="margin-top:3px !important">
+        <p class="lead" style="font-size:1.0rem"><strong class="bold_font">Vision:</strong> be the stewards of technology for small businesses to help them grow and thrive.</p>
+        <p class="lead" style="font-size:1.0rem"><strong class="bold_font">Thesis:</strong> automation can abstract away the complexities of digital transformation – a way for low-tech businesses to leapfrog into modernization.</p>
+        <p class="lead" style="font-size:1.0rem"><strong class="bold_font">Customer:</strong> small businesses in Japan struggling to keep up with tourism, margin pressure, and digital transformation today</p>
+        <p class="lead" style="font-size:1.0rem"><strong class="bold_font">Market:</strong> Japan lags in SME adoption of SaaS, represents a large market, and has tailwinds around tourism and government programs.</p>
+        <p class="lead" style="font-size:1.0rem"><strong class="bold_font">Solution:</strong> a suite of easy-to-use tools that let small businesses deliver more modern customer experiences and drive customer acquisition</p>
+      </div>
+      <div class="row flex-lg-row-reverse align-items-center">
+        <div class="accordion" id="accordionPanelsStayOpenExample">
+          <div class="accordion-item">
+            <h2 class="accordion-header" style="font-family:DM Serif Display">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                Full Overview Deck
+              </button>
+            </h2>
+            <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse">
+              <div class="accordion-body" style="background-color: none!important">
+                <div class="google-iframe-container">
+                  <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQgiqy97edfhXJ_RQG0IndpGqTcX68r3y-WWpe1E9Dsmvbxwvf971ZpUCn66wToUROHZhni-9p_5BSv/embed?start=false&loop=false&delayms=3000" width = "100%"  height = "350" frameborder="0" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+      </div>
+        
+    </div>
+    <div class="row justify-content-center align-items-center ">
+          <h1 class="fw-bold text-body-emphasis lh-2 mb-4 pt-1" style="font-family:DM Serif Display; font-size: calc(1.1rem + 1.2vw)" >Takara Snap: Our Intro Product</h1>
+          <div class="col" style="display:flex; justify-content:center">
+            <div class="embed-responsive align-items-center justify-content-center">
+              <video controls class = "flex" style="height:60vh!important; width:auto;">
+                <source src="index_files/video.mov" type="video/mp4">
+              </video>
+            </div>  
+            </div>
+          <div class="col-md-6">
+            <p class="lead" style="font-size:1.0rem"><strong class="bold_font">TL;DR:</strong> Takara Snap is an AI-powered tool designed to help Japanese restaurant owners easily create digitized, interactive, and multilingual menus. By simply taking a photo of their existing menus, restaurant owners can enhance their online presence, streamline operations, improve communications, and attract more customers.</p>
+            <p class="lead" style="font-size:1.0rem"><strong class="bold_font">Problem Statement:</strong> Many small restaurants in Japan still rely on outdated, paper-based menus, making it challenging to attract and serve international tourists. The core problem is the inefficiency and difficulty of implementing digital transformation tools, which are not user-friendly and require significant technical know-how. This creates a barrier for restaurant owners who are already overwhelmed with running their day-to-day operations.</p>
+            <p class="lead" style="font-size:1.0rem"><strong class="bold_font">Solution:</strong> Takara Snap is a simple, automated tool that makes digital transformation accessible and manageable for all restaurant owners, regardless of their technical expertise. By providing a comprehensive solution that includes OCR and image processing, content generation, multilingual translation, web publishing, and analytics integration, Takara Snap empowers restaurants to modernize their operations, improve customer satisfaction, and increase their visibility in a competitive market​​​​​​.</p>
+          </div>
+    </div>
+
+    <div class="row flex-lg-row-reverse align-items-center g-5" style="padding-bottom:3px!important; margin-top: 0px; padding-top:0px">
+      <h1 style="font-family:DM Serif Display; margin-top: 3px; font-size: calc(1.1rem + 1.2vw)">Learn More About...</h1>
+     
+  
+
+      <div class="accordion" id="accordionPanelsStayOpenExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header" style="font-family:DM Serif Display">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+              Approach to Takara Snap's MVP and Prototype
+            </button>
+          </h2>
+          <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
+            <div class="accordion-body" style="background-color: none!important">
+              <div class="row align-items-center justify-content-center"> 
+                <img class="rounded text-center" style="padding-left: 20%; padding-right: 20%;" src="index_files/eight.png"></img>
+              </div>
+              <div class="row align-items-center justify-content-center">
+                
+                  <p class="lead" style="font-size:1.0rem"><strong class="bold_font">Design:</strong> Created interactive prototypes on Figma for the core user flows.</p>
+                  <p class="lead" style="font-size:1.0rem"><strong class="bold_font">Problem Statement:</strong> Many small restaurants in Japan still rely on outdated, paper-based menus, making it challenging to attract and serve international tourists. The core problem is the inefficiency and difficulty of implementing digital transformation tools, which are not user-friendly and require significant technical know-how. This creates a barrier for restaurant owners who are already overwhelmed with running their day-to-day operations.</p>
+                  <p class="lead" style="font-size:1.0rem"><strong class="bold_font">Solution:</strong> Takara Snap is a simple, automated tool that makes digital transformation accessible and manageable for all restaurant owners, regardless of their technical expertise. By providing a comprehensive solution that includes OCR and image processing, content generation, multilingual translation, web publishing, and analytics integration, Takara Snap empowers restaurants to modernize their operations, improve customer satisfaction, and increase their visibility in a competitive market​​​​​​.</p>
+                  <p class="lead" style="font-size:1.0rem"><strong class="bold_font">Key Features:</strong> </p>
+                  <ul style = "padding-left:2rem; padding-right:2rem" class="">
+                    <li>
+                      <strong> OCR + Image Manipulation: </strong> Converts photos of existing menus into digital text, ensuring that the transition from paper to digital is seamless and accurate.
+                    </li>
+                   
+                    <li>
+                      <strong> Content Generation: </strong>  Automatically formats and designs the extracted text into new, visually appealing digital menus that reflect the restaurant's unique branding and style.
+                    </li>
+        
+                    <li>
+                      <strong> Multilingual Translation: </strong>  Translates menu items into multiple languages, making it easier for international tourists to understand and enjoy the offering.
+                    </li>
+        
+                    <li>
+                      <strong> Web Publishing: </strong> Publishes the digitized menus online, making them easily accessible through popular platforms like Google Maps and TripAdvisor.
+                    </li>
+
+                    <li>
+                      <strong> Analytics: </strong> Provides valuable insights into menu performance and customer preferences, allowing restaurant owners to make more data-driven decisions.
+                    </li>
+                    
+                  </ul>
+
+                  <p class="lead" style="font-size:1.0rem"><strong class="bold_font">Key Benefits:</strong></p>
+                  <ul style = "padding-left:2rem; padding-right:2rem" class="">
+                    <li>
+                      <strong> Streamline the path to digital transformation: </strong> Streamlines the process of menu management, order taking, and customer interaction, reducing the time and effort required by restaurant staff.
+                    </li>
+                   
+                    <li>
+                      <strong> Grow your business: </strong> Offers tools for social media integration, promotions, and customer loyalty programs, helping restaurants attract and retain customers. Switch to digitization unlocks valuable data on customer preferences and menu performance, allowing restaurant owners to make informed, data-driven decisions. </li>
+        
+                    <li>
+                      <strong> Improve customer experience: </strong>  Enhances the dining experience by providing quick, accurate, and interactive digital menus that are easy to navigate and understand. Breaks down language barriers with real-time translation, making it easier for international tourists to enjoy their dining experience.
+                    </li>
+                    
+                  </ul>
+
+                  <br>
+
+                  <p class="lead" style="font-size:1.0rem"><strong class="bold_font">Tech Flow and Stack:</strong> Summary flowchart of how Takara Snap's tech will work and how we'll get each key step done, both in the MVP but also the next version once we have more engineering resources. </p>
+
+                  <img class="rounded text-center" style="padding-left: 7rem; padding-right: 7rem; margin-bottom:1.3rem" src="index_files/techflows2.png"></img>
+                  <br>
+
+                  <p class="lead" style="font-size:1.0rem"><strong class="bold_font">Technical Buliding Blocks Started:</strong></p>
+                  <ul style = "padding-left:2rem; padding-right:2rem" class="">
+                    <li>
+                      <strong> HTML Menu Generator: </strong> Automates creation of HTML/CSS menus from OCR text.
+                    </li>
+                   
+                    <li>
+                      <strong> Brand Generator: </strong> Automatically generates brand guidelines and color schemes based on menu content. </li>
+        
+                    <li>
+                      <strong> Optical Character Recognition: </strong> Started fine-tuning Tesseract OCR and testing Azure OCR with Japanese menu text.
+                    </li>
+                    <li>
+                      <strong> Menu Text Classifier: </strong> Started building a text classifier to categorize menu text (e.g., item name vs. price vs. description vs. store info) for improved semantic understanding of OCR results.
+                    </li>
+                     
+                  </ul>
+    
+
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" style="font-family:DM Serif Display">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+              Key Research and Technology Findings
+            </button>
+          </h2>
+          <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
+            <div class="accordion-body">
+              <p>Below are slides that summarizes some of our key thinking behind: </p>
+              <ul>
+                <li> Takara Snap's MVP Product Roadmap </li>
+                <li> The tech stack and how to build cheaply and efficiently </li>
+                <li> In-market customer research in Japan </li>
+                <li> Competitive, market, and vertical research deep-dives </li>
+              
+              </ul>
+              <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vREn-vm47GBqP0YICqkhA82yDbRoH2txhbxIQCKP_zPfgEh4CUZR6r_g0vKSp5HmnvB9CEfB6eZraFi/embed?start=false&loop=false&delayms=3000" width = "100%"  height = "350" frameborder="0" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" style="font-family:DM Serif Display">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false" aria-controls="panelsStayOpen-collapseFour">
+              Finance & GTM Strategy
+            </button>
+          </h2>
+          <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse">
+            <div class="accordion-body">
+              <p>Below are slides that summarizes some of our key thinking behind: </p>
+              <ul>
+                <li> Goals and metrics </li>
+                <li> Approach to fundraising and valuations </li>
+                <li> Forecasts, models, and sensitivity analyses to guide business model and GTM decisions </li>
+                <li> Sales and marketing strategy </li>
+              </ul>
+              <div class="google-iframe-container">
+              <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSCiuJaglWYq_RMAj1nioMeEp1G45AgtCHIFVU2cv1HmHXDtK8hXXd_89DHtk6KHBBsfoRG1wuvRW20/embed?start=false&loop=false&delayms=3000" width = "100%"  height = "350" frameborder="0" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+</div>
+            </div>
+          </div>
+        </div>
+    
+      </div>
+    </div>
+  </section>
+
+ 
+  
+<!-- FOOTER --> 
+<div class="container text-center" style="background-color:black; max-width:100vw; padding-top: 40px; padding-bottom: 40px">
+  <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4" style="margin-bottom:0px!important">
+    <div class="col-lg-6 col-md-8 mx-auto">
+      <h1 class="fw-light" style="font-family:DM Serif Display">Thanks for visiting!</h1>
+      <h6 style="font-weight:100; font-size:0.85rem"> I cobbled together this website using Bootstrap’s examples, templates from github and codepen, and a bit of my own tinkering. Source code includes references for images and snippets. </h6>
+    </div>
+  </footer>
+</div>
+
+</main>
+
+
+<script src="assets/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+    </body>
+</html>
+
+<!-- THANKS TO
+https://unsplash.com/photos/red-xbox-one-game-controller-hUD0PUczwJQ
+https://unsplash.com/photos/photo-of-brown-wooden-bookshelf-xrbbXIXAWY0
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+
+-->
