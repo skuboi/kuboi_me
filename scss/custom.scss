@@ -1,0 +1,9 @@
+// Custom.scss
+// Option A: Include all of Bootstrap
+
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+// Default variable overrides
+$body-bg: #049eff;
+$body-color: #039e39;
+$font-family: "Papyrus";
